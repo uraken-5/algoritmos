@@ -6,17 +6,10 @@ import java.util.List;
 public class BinarySearch {
 
     public static void main(String[] args) {
-        ArrayList<Integer> listScope = new ArrayList<>(List.of(1, 3, 5, 8));
-        int searchingValue = 5;
-        Integer val = binarySearch(listScope, searchingValue);
+        ArrayList<Integer> listScope = new ArrayList<>(List.of(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32));
+        int searchingValue = 29;
+        //Integer val = binarySearch(listScope, searchingValue);
         Integer position = binarySearch2(listScope, searchingValue);
-
-        if (val != null) {
-            System.out.println("The number is " + val);
-        } else {
-            System.out.println("The search number is not present in the list");
-        }
-
         System.out.println("the position are " + position);
     }
 
@@ -37,12 +30,25 @@ public class BinarySearch {
         }
     }
 
+    /*
+     * En cada iteracion, se corta a la mitad el tamaño de la lista, o sea que cada vez es mas pequeña y la busqueda sera mas corta,
+     * incluso si los numeros de la lista crecen.
+     * Complejidad Logarítmica (O(log n)): Debido a que el algoritmo divide la lista a la mitad en cada iteración,
+     * el número de pasos necesarios para llegar al resultado (o concluir que el valor no está en la lista)
+     * crece logarítmicamente con respecto al tamaño de la lista. Esto es lo que llamamos complejidad logarítmica, denotada como O(log n).
+     * */
     public static Integer binarySearch2(List<Integer> list, int searchingValue) {
+        /*
+            Estas inicializaciones no afectan la complejidad ya que se ejecutan
+            solo una vez, independiente del tamaño de la lista. Se consideran O(1), que es constante
+        */
         int low = 0;
         int high = list.size() - 1;
+        int step = 0;
 
         while (low <= high) {
-            int mid = (low + high);
+            System.out.println("Paso " + ++step );
+            int mid = (low + high)/2;
             int guess = list.get(mid);
             if (guess == searchingValue) {
                 return mid;
@@ -54,8 +60,5 @@ public class BinarySearch {
             }
         }
             return -1;
-
     }
-
-
 }

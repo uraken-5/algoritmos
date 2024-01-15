@@ -10,3 +10,10 @@ Por ejemplo, quieres adivinar un numero de entre una gran lista de numeros. Tu e
 ![Texto Alternativo](img/binarysearch_1.png)
 
 ![Texto Alternativo](img/binarysearch_2.jpg)
+
+## Identificando la Complejidad:
+El algoritmo de búsqueda binaria iterativa tiene una complejidad de tiempo de O(log n). 
+Esto significa que es muy eficiente, especialmente para listas grandes, porque el número de 
+comparaciones necesarias aumenta muy lentamente a medida que el tamaño de la lista se hace más grande. 
+En el mundo real, esto se traduce en un algoritmo rápido y eficiente, ideal para buscar en listas grandes.
+
